@@ -7,7 +7,7 @@
         name: "Weather",
         created() {
             const WIDGET = document.createElement('script');
-            WIDGET.text = 'WIDGET = {ID: \'H2eLCCdIYS\'}';
+            WIDGET.text = 'WIDGET = {ID: \'EzULeHNCgJ\'}';
             document.body.appendChild(WIDGET);
             const s = document.createElement('script');
             s.type = 'text/javascript';
@@ -15,14 +15,14 @@
             document.body.appendChild(s);
         },
         mounted() {
-            var id = setInterval(() => {
-                if(document.getElementById("weather-view-he").style.cssText
-                    === "background-color:#000;width:400px;height:200px;font-size: 18px;float: right;"){
-                    clearInterval(id)
-                }
-                document.getElementById("weather-view-he").style.cssText
-                    = "background-color:#000;width:400px;height:200px;font-size: 18px;float: right;"
-            },500)
+            // var id = setInterval(() => {
+            //     if(document.getElementById("weather-view-he").style.cssText
+            //         === "background-color:#000;width:400px;height:200px;font-size: 12px;float: right;"){
+            //         clearInterval(id)
+            //     }
+            //     document.getElementById("weather-view-he").style.cssText
+            //         = "background-color:#000;width:400px;height:200px;font-size: 12px;float: right;"
+            // },500)
         }
     }
 </script>
