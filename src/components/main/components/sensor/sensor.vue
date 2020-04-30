@@ -22,8 +22,7 @@
                     "startTime":"1",
                     "endTime":"1886493997404"
                 },
-                tempLiuru: [],
-                humidityLiuru: []
+                sensorList: []
             }
         },
         created() {
@@ -34,84 +33,84 @@
                 var that = this;
                 fetchList(this.query).then(res => {
                     if(res.code === 0){
-                        for(let sensor in res.data){
-                            that.tempLiuru.push({
-                                value: [
-                                    that.formatDate(res.data[sensor].createTime),
-                                    res.data[sensor].temp,
-                                ]
-                            });
-                            that.humidityLiuru.push({
-                                value: [
-                                    that.formatDate(res.data[sensor].createTime),
-                                    res.data[sensor].humidity,
-                                ]
-                            });
-                        }
+                        that.sensorList = res.data;
+                        this.init();
                     }
                 });
             },
             formatDate(datetime) {
                 let date = new Date(datetime);
-                let year = date.getFullYear(),
-                    month = ("0" + (date.getMonth() + 1)).slice(-2),
-                    sdate = ("0" + date.getDate()).slice(-2),
-                    hour = ("0" + date.getHours()).slice(-2),
-                    minute = ("0" + date.getMinutes()).slice(-2),
-                    second = ("0" + date.getSeconds()).slice(-2);
-                return year + "/"+ month +"/"+ sdate +" "+ hour +":"+ minute +":" + second;
-            }
-        },
-        mounted() {
-            var chart = this.$echarts.init(document.getElementById("chart"));
-            var option = {
-                legend: {
-                    data: ['温度', '湿度'],
-                    textStyle: {
-                        color: '#fff',
-                        fontSize: 16
-                    }
-                },
-                grid:{
-                    x:'6%',
-                    y:'10%',
-                    x2:'6%',
-                    y2:'16%'
-                },
-                xAxis:{
-                    type:'time',
-                    splitNumber:6,
-                    axisLabel:{
-                        formatter:'{value}',
-                        color: 'rgba(255, 255, 255)',
-                        fontSize: 16
+                return date.toLocaleDateString() + ' ' + date.getHours() + date.toLocaleTimeString().substr(-6,6)
+            },
+            init(){
+                let tempLiuru = [];
+                let humidityLiuru = [];
+                for(let sensor in this.sensorList){
+                    tempLiuru.push({
+                        value: [
+                            this.formatDate(this.sensorList[sensor].createTime),
+                            this.sensorList[sensor].temp,
+                        ]
+                    });
+                    humidityLiuru.push({
+                        value: [
+                            this.formatDate(this.sensorList[sensor].createTime),
+                            this.sensorList[sensor].humidity,
+                        ]
+                    });
+                }
+
+                var chart = this.$echarts.init(document.getElementById("chart"));
+                var option = {
+                    legend: {
+                        data: ['温度', '湿度'],
+                        textStyle: {
+                            color: '#fff',
+                            fontSize: 16
+                        }
                     },
-                    splitLine:{show: false}
-                },
-                yAxis:{
-                    type:'value',
-                    splitNumber:4,
-                    axisLabel:{
-                        formatter:'{value}',
-                        color: 'rgba(255, 255, 255)',
-                        fontSize: 16
-                    }
-                },
-                series:[{
-                    name: '温度',
-                    type: 'line',
-                    showSymbol: false,
-                    symbolSize:2,
-                    data: this.tempLiuru,
-                },{
-                    name: '湿度',
-                    type: 'line',
-                    showSymbol: false,
-                    symbolSize:2,
-                    data: this.humidityLiuru,
-                }]
-            };
-            chart.setOption(option);
+                    grid:{
+                        x:'6%',
+                        y:'10%',
+                        x2:'6%',
+                        y2:'16%'
+                    },
+                    xAxis:{
+                        type:'time',
+                        splitNumber:6,
+                        axisLabel:{
+                            formatter:'{value}',
+                            color: 'rgba(255, 255, 255)',
+                            fontSize: 16
+                        },
+                        splitLine:{show: false}
+                    },
+                    yAxis:{
+                        type:'value',
+                        splitNumber:4,
+                        axisLabel:{
+                            formatter:'{value}',
+                            color: 'rgba(255, 255, 255)',
+                            fontSize: 16
+                        }
+                    },
+                    series:[{
+                        name: '温度',
+                        type: 'line',
+                        showSymbol: false,
+                        symbolSize:6,
+                        data: tempLiuru,
+                    },{
+                        name: '湿度',
+                        type: 'line',
+                        showSymbol: false,
+                        symbolSize:6,
+                        data: humidityLiuru,
+                    }]
+                };
+                console.log(tempLiuru)
+                chart.setOption(option);
+            }
         }
     }
 </script>
