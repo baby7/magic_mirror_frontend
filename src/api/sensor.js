@@ -17,10 +17,10 @@
 
 import request from '@/router/axios'
 
-export function fetchList(query) {
+export function fetchList(obj) {
     return request({
-        url: 'admin/sysnews/page?current=' + query.current + '&size=' + query.size,
-        method: 'get',
-        params: null
+        url: 'static/sensor/list',
+        method: 'post',
+        data: obj
     })
 }
