@@ -5,7 +5,6 @@
 </template>
 
 <script>
-    import echarts from "echarts";
 
     export default {
         name: "Sensor",
@@ -373,7 +372,7 @@
             var liuru = changeData(data_in);
 
 
-            var chart = echarts.init(document.getElementById("chart"));
+            var chart = this.$echarts.init(document.getElementById("chart"));
             var option = {
                 legend: {
                     data: ['流入', '流入1'],

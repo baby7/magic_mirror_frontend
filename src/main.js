@@ -3,6 +3,7 @@ import router from './router'
 import config from '@/config'
 import store from '@/store'
 import App from './App.vue'
+import echarts from "echarts";
 
 /**
  * @description 生产环境关掉提示
@@ -16,6 +17,8 @@ Vue.prototype.$config = config
  * @description 全局变量
  */
 Vue.store = store
+
+Vue.prototype.$echarts = echarts;
 
 new Vue({
   el: '#app',
