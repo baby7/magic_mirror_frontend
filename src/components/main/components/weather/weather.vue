@@ -15,14 +15,14 @@
             document.body.appendChild(s);
         },
         mounted() {
-            // var id = setInterval(() => {
-            //     if(document.getElementById("weather-view-he").style.cssText
-            //         === "background-color:#000;width:400px;height:200px;font-size: 12px;float: right;"){
-            //         clearInterval(id)
-            //     }
-            //     document.getElementById("weather-view-he").style.cssText
-            //         = "background-color:#000;width:400px;height:200px;font-size: 12px;float: right;"
-            // },500)
+            var id = setInterval(() => {
+                if(document.getElementById("weather-view-he").style.cssText
+                    === "background-color:#000;width:500px;height:250px;font-size: 16px;float: right;"){
+                    clearInterval(id)
+                }
+                document.getElementById("weather-view-he").style.cssText
+                    = "background-color:#000;width:500px;height:250px;font-size: 16px;float: right;"
+            },500)
         }
     }
 </script>
