@@ -7,7 +7,7 @@
         name: "Weather",
         created() {
             const WIDGET = document.createElement('script');
-            WIDGET.text = 'WIDGET = {ID: \'EzULeHNCgJ\'}';
+            WIDGET.text = "WIDGET = {ID: 'EzULeHNCgJ'}";
             document.body.appendChild(WIDGET);
             const s = document.createElement('script');
             s.type = 'text/javascript';
@@ -17,11 +17,11 @@
         mounted() {
             var id = setInterval(() => {
                 if(document.getElementById("weather-view-he").style.cssText
-                    === "background-color:#000;width:500px;height:250px;font-size: 16px;float: right;"){
+                    === "background-color:#000;width:500px;height:250px;font-size: 16px;"){
                     clearInterval(id)
                 }
                 document.getElementById("weather-view-he").style.cssText
-                    = "background-color:#000;width:500px;height:250px;font-size: 16px;float: right;"
+                    = "background-color:#000;width:500px;height:250px;font-size: 16px;"
             },500)
         }
     }
