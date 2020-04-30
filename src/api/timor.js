@@ -24,3 +24,12 @@ export function getTimor(year) {
     params: null
   })
 }
+
+
+export function getList(query) {
+  return request({
+    url: 'http://62.234.97.198:8005/admin/systimor/page?current=' + query.current + '&size=' + query.size,
+    method: 'get',
+    params: null
+  })
+}

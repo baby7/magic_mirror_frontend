@@ -12,25 +12,30 @@
 </template>
 
 <script>
-    import { getTimor } from '@/api/timor'
+    import { getList } from '@/api/timor'
 
     export default {
         name: "Timor",
         data() {
             return {
-                timorList: []
+                timorList: [],
+                query: {
+                    current:1,
+                    size:20
+                }
             }
         },
         methods:{
             getData(){
-                getTimor("2020").then(res => {
+                getList(this.query).then(res => {
                     // this.timorList = res.holiday;
                     if(res.code === 0){
-                        for (let holiday in res.holiday) {
-                            let timor = {name:res.holiday[holiday].name,date:res.holiday[holiday].date}
-                            if(JSON.stringify(this.timorList).indexOf(JSON.stringify(timor.name))===-1){
-                                this.timorList.push(timor)
-                            }
+                        for(let holiday in res.data.records){
+                            let timor = {
+                                name:res.data.records[holiday].name,
+                                date:res.data.records[holiday].date.substring(0, 10)
+                            };
+                            this.timorList.push(timor)
                         }
                     }
                 });
