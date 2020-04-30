@@ -395,14 +395,15 @@
                     x:'6%',
                     y:'10%',
                     x2:'6%',
-                    y2:'12%'
+                    y2:'16%'
                 },
                 xAxis:{
                     type:'time',
                     splitNumber:6,
                     axisLabel:{
                         formatter:'{value}',
-                        color: 'rgba(255, 255, 255)'
+                        color: 'rgba(255, 255, 255)',
+                        fontSize: 16
                     },
                     splitLine:{show: false}
                 },
@@ -411,7 +412,8 @@
                     splitNumber:4,
                     axisLabel:{
                         formatter:'{value}',
-                        color: 'rgba(255, 255, 255)'
+                        color: 'rgba(255, 255, 255)',
+                        fontSize: 16
                     }
                 },
                 series:[{
