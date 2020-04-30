@@ -1,6 +1,11 @@
 <template>
-    <div style="width:500px;height:250px;">
-        <div id="chart" style="width:500px;height:250px;"></div>
+    <div class="sensor_line" style="margin-top: 10px;">
+        <div id="chart" class="sensor_line"></div>
+        <div class="sensor_now_box">
+            <span class="sensor_now_text">
+                {{sensorText}}
+            </span>
+        </div>
     </div>
 </template>
 
@@ -8,6 +13,11 @@
 
     export default {
         name: "Sensor",
+        data() {
+            return {
+                sensorText: "当前温度：37.7℃ 湿度：37.7℃"
+            }
+        },
         mounted() {
             var data_in = [
                 918.32,
@@ -384,7 +394,7 @@
                 grid:{
                     x:'6%',
                     y:'10%',
-                    x2:'2.4%',
+                    x2:'6%',
                     y2:'12%'
                 },
                 xAxis:{
@@ -424,4 +434,15 @@
 </script>
 
 <style scoped>
+    .sensor_line {
+        width:500px;
+        height:250px;
+    }
+    .sensor_now_box {
+        margin-top: 10px;
+    }
+    .sensor_now_text {
+        font-size: 32px;
+        color: #FFFFFF;
+    }
 </style>
