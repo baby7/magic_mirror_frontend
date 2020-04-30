@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div id="chart"></div>
+    <div style="width:500px;height:250px;">
+        <div id="chart" style="width:500px;height:250px;"></div>
     </div>
 </template>
 
@@ -375,45 +375,46 @@
             var chart = this.$echarts.init(document.getElementById("chart"));
             var option = {
                 legend: {
-                    data: ['流入', '流入1'],
+                    data: ['温度', '湿度'],
                     textStyle: {
                         color: '#fff',
                         fontSize: 16
                     }
                 },
                 grid:{
-                    x:'3.6%',
-                    y:'5%',
+                    x:'6%',
+                    y:'10%',
                     x2:'2.4%',
                     y2:'12%'
                 },
                 xAxis:{
                     type:'time',
-                    splitNumber:24,
+                    splitNumber:6,
                     axisLabel:{
-                        formatter:'{value}',       //给Y轴上的刻度加上单位
+                        formatter:'{value}',
                         color: 'rgba(255, 255, 255)'
                     },
                     splitLine:{show: false}
                 },
                 yAxis:{
                     type:'value',
+                    splitNumber:4,
                     axisLabel:{
-                        formatter:'{value}',       //给Y轴上的刻度加上单位
+                        formatter:'{value}',
                         color: 'rgba(255, 255, 255)'
                     }
                 },
                 series:[{
-                    name: '流入',
+                    name: '温度',
                     type: 'line',
                     showSymbol: false,
-                    symbolSize:12,
+                    symbolSize:6,
                     data: liuru,
                 },{
-                    name: '流入1',
+                    name: '湿度',
                     type: 'line',
                     showSymbol: false,
-                    symbolSize:12,
+                    symbolSize:6,
                     data: liuru,
                 }]
             };
