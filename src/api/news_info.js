@@ -19,7 +19,7 @@ import request from '@/router/axios'
 
 export function fetchList(query) {
     return request({
-        url: '/admin/sysnews/page?current=' + query.current + '&size=' + query.size,
+        url: 'http://62.234.97.198:8004/admin/sysnews/page?current=' + query.current + '&size=' + query.size,
         method: 'get',
         params: null
     })
