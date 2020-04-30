@@ -19,7 +19,7 @@ import request from '@/router/axios'
 
 export function fetchList(obj) {
     return request({
-        url: 'static/sensor/list',
+        url: 'http://62.234.97.198:8004/static/sensor/list',
         method: 'post',
         data: obj
     })
