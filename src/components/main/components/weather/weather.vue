@@ -7,7 +7,7 @@
         name: "Weather",
         created() {
             const WIDGET = document.createElement('script');
-            WIDGET.text = "WIDGET = {ID: 'EzULeHNCgJ'}";
+            WIDGET.text = "WIDGET = {ID: 'RejMJQqNQR'}";
             document.body.appendChild(WIDGET);
             const s = document.createElement('script');
             s.type = 'text/javascript';
