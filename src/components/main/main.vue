@@ -2,7 +2,7 @@
     <div id="app">
         <div class="main_data">
             <Weather/>
-            <Sensor/>
+<!--            <Sensor/>-->
         </div>
         <DateTime/>
         <Timor/>
@@ -16,7 +16,7 @@
 
 <script>
     import Weather from "@/components/main/components/weather/weather";
-    import Sensor from "@/components/main/components/sensor/sensor";
+    // import Sensor from "@/components/main/components/sensor/sensor";
     import DateTime from "@/components/main/components/date_time/date_time";
     import Timor from "@/components/main/components/timor/timor";
     import TitleMsg from "@/components/main/components/title_msg/title_msg"
@@ -27,7 +27,7 @@
         components: {
             DateTime,
             Weather,
-            Sensor,
+            // Sensor,
             Timor,
             TitleMsg,
             NewsInfo
