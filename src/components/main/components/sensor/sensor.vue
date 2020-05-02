@@ -18,9 +18,9 @@
             return {
                 sensorText: "当前温度：37.7℃ 湿度：37.7℃",
                 query: {
-                    "userId":1,
-                    "startTime":"1",
-                    "endTime":"1886493997404"
+                    userId:1,
+                    startTime:"1",
+                    endTime:"1886493997404"
                 },
                 sensorList: []
             }
@@ -31,6 +31,9 @@
         methods:{
             getList() {
                 var that = this;
+                var timestamp = Date.parse(new Date());
+                this.query.startTime = timestamp - 86400000;
+                this.query.endTime = timestamp;
                 fetchList(this.query).then(res => {
                     if(res.code === 0){
                         that.sensorList = res.data;
@@ -108,7 +111,6 @@
                         data: humidityLiuru,
                     }]
                 };
-                console.log(tempLiuru)
                 chart.setOption(option);
             }
         }
