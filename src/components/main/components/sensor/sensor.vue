@@ -66,7 +66,7 @@
                 var chart = this.$echarts.init(document.getElementById("chart"));
                 var option = {
                     legend: {
-                        data: ['温度', '湿度'],
+                        data: ['温度(红)', '湿度(白)'],
                         textStyle: {
                             color: '#fff',
                             fontSize: 16
@@ -98,17 +98,35 @@
                         }
                     },
                     series:[{
-                        name: '温度',
+                        name: '温度(红)',
                         type: 'line',
                         showSymbol: false,
                         symbolSize:6,
                         data: tempLiuru,
+                        itemStyle: {
+                            nomal: {
+
+                            }
+                        },
+                        lineStyle: {
+                            width: 5,
+                            color: "#EA4335"
+                        }
                     },{
-                        name: '湿度',
+                        name: '湿度(白)',
                         type: 'line',
                         showSymbol: false,
                         symbolSize:6,
                         data: humidityLiuru,
+                        itemStyle: {
+                            nomal: {
+
+                            }
+                        },
+                        lineStyle: {
+                            width: 5,
+                            color: "#FFF"
+                        }
                     }]
                 };
                 chart.setOption(option);
