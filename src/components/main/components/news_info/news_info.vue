@@ -41,7 +41,7 @@
             },
             //文字横向滚动
             scrollImgLeft() {
-                let speed = 20;
+                let speed = 50;
                 setInterval(this.Marquee,speed);
             },
             Marquee(){
