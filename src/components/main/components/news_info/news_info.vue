@@ -41,7 +41,7 @@
             },
             //文字横向滚动
             scrollImgLeft() {
-                let speed = 50;
+                let speed = 200;
                 setInterval(this.Marquee,speed);
             },
             Marquee(){
@@ -52,7 +52,7 @@
                 if(scroll_end.offsetWidth - scroll_div.scrollLeft <= 0)
                     scroll_div.scrollLeft -= scroll_begin.offsetWidth;
                 else
-                    scroll_div.scrollLeft++;
+                    scroll_div.scrollLeft = scroll_div.scrollLeft + 4;
             }
         }
     }
