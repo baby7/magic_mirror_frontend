@@ -4,7 +4,7 @@
 <!--            <Weather/>-->
 <!--            <Sensor/>-->
 <!--        </div>-->
-<!--        <DateTime/>-->
+        <DateTime/>
         <Timor/>
         <div class="main">
             <router-view/>
