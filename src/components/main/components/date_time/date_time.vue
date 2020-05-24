@@ -34,19 +34,29 @@
                     var seconds = new Date().getSeconds();
                     //添加前导零秒值
                     document.getElementById('sec').innerHTML = ( seconds < 10 ? "0" : "" ) + seconds
-                },1000);
-                setInterval( function() {
+
                     // 创建一个对象，并提取newDate（）在访问者的当前时间的分钟
                     var minutes = new Date().getMinutes();
                     // 添加前导零的分钟值
                     document.getElementById('min').innerHTML = ( minutes < 10 ? "0" : "" ) + minutes
-                },1000);
-                setInterval( function() {
+
                     // 创建一个对象，并提取newDate（）在访问者的当前时间的小时
                     var hours = new Date().getHours();
                     // 添加前导零的小时值
                     document.getElementById('hours').innerHTML = ( hours < 10 ? "0" : "" ) + hours
-                }, 1000);
+                },1000);
+                // setInterval( function() {
+                //     // 创建一个对象，并提取newDate（）在访问者的当前时间的分钟
+                //     var minutes = new Date().getMinutes();
+                //     // 添加前导零的分钟值
+                //     document.getElementById('min').innerHTML = ( minutes < 10 ? "0" : "" ) + minutes
+                // },1000);
+                // setInterval( function() {
+                //     // 创建一个对象，并提取newDate（）在访问者的当前时间的小时
+                //     var hours = new Date().getHours();
+                //     // 添加前导零的小时值
+                //     document.getElementById('hours').innerHTML = ( hours < 10 ? "0" : "" ) + hours
+                // }, 1000);
             }
         },
         mounted(){
@@ -65,14 +75,14 @@
     .clock ul li{display:inline;font-size:4em;text-align:center;font-family:'BebasNeueRegular', Arial, Helvetica, sans-serif;text-shadow:0 0 5px #00c6ff;}
     #point1{position:relative;-moz-animation:mymove 1s ease infinite;-webkit-animation:mymove 1s ease infinite;padding-left:10px;padding-right:10px;}
     #point2{position:relative;-moz-animation:mymove 1s ease infinite;-webkit-animation:mymove 1s ease infinite;padding-left:10px;padding-right:10px;}
-    @-webkit-keyframes mymove{
-        0%{opacity:1.0;text-shadow:0 0 20px #00c6ff;}
-        50%{opacity:0;text-shadow:none;}
-        100%{opacity:1.0;text-shadow:0 0 20px #00c6ff;}
-    }
-    @-moz-keyframes mymove{
-        0%{opacity:1.0;text-shadow:0 0 20px #00c6ff;}
-        50%{opacity:0;text-shadow:none;}
-        100%{opacity:1.0;text-shadow:0 0 20px #00c6ff;}
-    }
+    /*@-webkit-keyframes mymove{*/
+    /*    0%{opacity:1.0;text-shadow:0 0 20px #00c6ff;}*/
+    /*    50%{opacity:0;text-shadow:none;}*/
+    /*    100%{opacity:1.0;text-shadow:0 0 20px #00c6ff;}*/
+    /*}*/
+    /*@-moz-keyframes mymove{*/
+    /*    0%{opacity:1.0;text-shadow:0 0 20px #00c6ff;}*/
+    /*    50%{opacity:0;text-shadow:none;}*/
+    /*    100%{opacity:1.0;text-shadow:0 0 20px #00c6ff;}*/
+    /*}*/
 </style>
