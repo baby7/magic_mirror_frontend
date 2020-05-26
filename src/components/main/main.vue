@@ -52,7 +52,7 @@
         width: 1340px;
         padding: 0px 20px 20px 20px;
         overflow:hidden;
-        margin-top: 50%;
+        margin-top: 40px;
     }
     .main_data {
         float: right;
