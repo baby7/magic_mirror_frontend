@@ -1,12 +1,12 @@
 <template>
     <div>
         <div style="border:1px solid #FFFFFF;width: 310px;margin-left: 0;margin-bottom: 5px"/>
-        <ul v-for="(timor,index) in timorList" :key="timor" style="width: 100%;margin-left: 0;padding-left: 0px">
+        <ul v-for="(timor,index) in timorList" :key="timor" style="width: 35%;margin-left: 0;padding-left: 0px">
             <li v-if="index < 12" style="font-family:'BebasNeueRegular',Arial,Helvetica,sans-serif;text-shadow: 0 0 5px #00c6ff;color: #fff;font-size: 23px;">
                 <span>{{timor.name}}</span>
                 <span style="float: right">{{timor.date}}</span>
             </li>
-            <div v-if="index <11" style="border:0.5px dashed #666666;width: 310px;"/>
+            <div v-if="index <11" style="border:0.5px dashed #666666;width: 100%;"/>
         </ul>
     </div>
 </template>
