@@ -1,7 +1,7 @@
 <template>
     <div class="clock">
         <div id="Date"></div>
-        <ul>
+        <ul style="font-size: 10px">
             <li id="hours"> </li>
             <li id="point1">:</li>
             <li id="min"> </li>
