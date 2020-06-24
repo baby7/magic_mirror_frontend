@@ -10,7 +10,7 @@
             <router-view/>
         </div>
         <title-msg/>
-        <news-info/>
+<!--        <news-info/>-->
     </div>
 </template>
 
